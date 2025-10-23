@@ -1,0 +1,321 @@
+
+/* === GENERAL === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4c0404;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === HEADER (đồng bộ với index.css) === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo a {
+  color: #ff6600;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ff6600;
+}
+
+ 
+
+/* === Responsive header === */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .logo a {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .search-box {
+    margin-top: 12px;
+  }
+}
+
+/* === HERO BANNER === */
+.about-hero {
+  width: 100%;
+  text-align: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.about-hero img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* === MAIN ABOUT SECTION === */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 80px 10%;
+  background-color: #f5f2ef;
+  flex-wrap: wrap;
+}
+
+/* --- LEFT: ABOUT ME --- */
+.about-left {
+  flex: 1;
+  background-color: #eae7e3;
+  border: 1px solid #d0ccc7;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Logo nhỏ */
+.custom-logo-link img {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.custom-logo-link img:hover {
+  transform: scale(1.05);
+}
+
+/* Ảnh phụ bên phải */
+.about-image {
+  flex-shrink: 0;
+}
+
+.about-image img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .about-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image img {
+    margin-top: 25px;
+  }
+}
+
+/* --- RIGHT: WHAT DO I DO --- */
+.about-right {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.about-right h2 {
+  font-size: 26px;
+  color: #000;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comment-box {
+  position: relative;
+  background-color: transparent;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.comment-box:last-child {
+  border-bottom: none;
+}
+
+.comment-box p {
+  font-size: 16px;
+  font-style: italic;
+  color: #333;
+  margin: 0;
+  padding-left: 30px;
+  position: relative;
+}
+
+.comment-box p::before {
+  content: "“";
+  font-size: 30px;
+  color: #ff6600;
+  position: absolute;
+  left: 0;
+  top: -5px;
+  line-height: 1;
+}
+
+/* Responsive main content */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+
+  .about-left {
+    margin-bottom: 40px;
+  }
+}
+
+/* === GALLERY SECTION === */
+.about-gallery {
+  text-align: center;
+  background-color: #000;
+  padding: 80px 8%;
+  color: #fff;
+}
+
+.about-gallery h2 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Lưới ảnh — hiển thị 4 ảnh 1 hàng */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ô ảnh */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.25);
+}
+
+/* Responsive nhỏ hơn 600px */
+@media (max-width: 600px) {
+  .about-gallery {
+    padding: 60px 5%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .gallery-item {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ff6600;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

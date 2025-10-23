@@ -1,0 +1,250 @@
+html {
+  overflow-y: scroll;
+}
+
+/* === GENERAL === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4c0404;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === HEADER === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo a {
+  color: #ff6600;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ff6600;
+}
+
+ 
+
+/* === MAIN BLOG SECTION === */
+.blog-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 80px 10%;
+  background-color: #4c0404;
+  flex-wrap: wrap;
+}
+
+/* --- LEFT: BLOG TEXT --- */
+.blog-left {
+  flex: 1;
+  background-color: #eae7e3;
+  border: 1px solid #d0ccc7;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.blog-text {
+  flex: 1;
+}
+
+.blog-text h2 {
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.blog-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.comment-box {
+  background-color: transparent;
+  padding: 15px 0;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.comment-box p {
+  font-size: 16px;
+  font-style: italic;
+  color: #333;
+  margin: 0;
+  padding-left: 30px;
+  position: relative;
+}
+
+.comment-box p::before {
+  content: "“";
+  font-size: 30px;
+  color: #ff6600;
+  position: absolute;
+  left: 0;
+  top: -5px;
+  line-height: 1;
+}
+
+/* Ảnh bên phải */
+.blog-image {
+  flex-shrink: 0;
+}
+
+.blog-image img {
+  width: 230px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .blog-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .blog-image img {
+    margin-top: 25px;
+  }
+}
+
+/* --- RIGHT: GALLERY + VIDEO --- */
+.blog-right {
+  flex: 1;
+  padding: 0 10px;
+}
+
+/* Grid ảnh */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Video box */
+.video-box {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-box video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .blog-content {
+    flex-direction: column;
+  }
+
+  .blog-left,
+  .blog-right {
+    width: 100%;
+  }
+
+  .blog-left {
+    margin-bottom: 40px;
+  }
+}
+
+/* === Fix cân chiều cao giữa 2 bên === */
+.blog-content {
+  align-items: stretch; /* ép 2 bên có chiều cao bằng nhau */
+}
+
+.blog-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* đẩy video xuống cuối */
+}
+
+.video-box {
+  margin-top: auto; /* ép video dính phần dưới */
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ff6600;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
